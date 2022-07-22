@@ -18,8 +18,28 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
 * `cdk bootstrap -c accountId=123456789012 -c region=us-east-1` Refer: https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html
 * `cdk deploy -c accountId=123456789012 -c region=us-east-1`
 
+### Output 
+```
+ ✅  SpringBootApplication
+
+✨  Deployment time: 363.24s
+
+Outputs:
+SpringBootApplication.loadbalancerDnsName = prod-loadbalancer-580696646.us-east-1.elb.amazonaws.com
+Stack ARN:
+arn:aws:cloudformation:us-east-1:987337930789:stack/SpringBootApplication/eb92fad0-09cc-11ed-8c49-0aeeac31847b
+
+✨  Total time: 372.42s
+```
+
 
 ### Verify
+
+You can hit the <SpringBootApplication.loadbalancerDnsName>/notification-templates URL on the browser to see
+
+```Hello From Cloudformation :-)```
+
+Also, resources are created on AWS
 
 ![img.png](cdkstackcreated.png)
 
