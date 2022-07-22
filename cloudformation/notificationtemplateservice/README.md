@@ -2,7 +2,7 @@
 
 ## Network
 
-![](cloudformation/notificationtemplateservice/aws-infrastructure.png)
+![](aws-infrastructure.png)
 
 ```
 $ cd cloudformation/notificationtemplateservice
@@ -28,9 +28,9 @@ You can access your service at http://54.196.159.77:8080
 
 ### Verify on your AWS Account
 
-![stackCreationInProgess.png](cloudformation/notificationtemplateservice/stackCreationInProgess.png)
+![stackCreationInProgess.png](stackCreationInProgess.png)
 
-![stackCreationInCompleted.png](cloudformation/notificationtemplateservice/stackCreationInCompleted.png)
+![stackCreationInCompleted.png](stackCreationInCompleted.png)
 
 :bangbang:  ###  NOTE  
 
