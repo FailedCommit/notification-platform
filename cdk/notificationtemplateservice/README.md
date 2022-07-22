@@ -15,11 +15,19 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-:bangbang: ### Note
+* `cdk bootstrap -c accountId=123456789012 -c region=us-east-1` Refer: https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html
+* `cdk deploy -c accountId=123456789012 -c region=us-east-1`
 
-Don't forget to invoke ```cdk destroy``` to remove any infrastructure you've created. Leaving the infra running will cost money on hourly basis.
 
-```cdk deploy -c accountId=123456789012 -c region=us-east-1```
+### Verify
+
+![img.png](cdkstackcreated.png)
+
+:bangbang: Note
+
+Don't forget to invoke ```cdk destroy``` when done. Leaving the infra running will cost money on hourly basis.
+
+* `cdk destroy -c accountId=123456789012 -c region=us-east-1`
 
 Without accountId and region params, the command will pick the default values configured in the CLI.
 

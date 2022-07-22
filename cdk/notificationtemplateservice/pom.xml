@@ -3,15 +3,16 @@
          xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.myorg</groupId>
-    <artifactId>notificationtemplateservice</artifactId>
+    <groupId>com.chargebee.notificationtemplateservice</groupId>
+    <artifactId>cdk</artifactId>
     <version>0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cdk.version>2.33.0</cdk.version>
-        <constructs.version>[10.0.0,11.0.0)</constructs.version>
-        <junit.version>5.7.1</junit.version>
+        <cdk-constructs.version>0.1.9</cdk-constructs.version>
+        <junit.version>5.8.2</junit.version>
+        <constructs.version>10.1.53</constructs.version>
+        <jackson.version>2.13.3</jackson.version>
     </properties>
 
     <build>
@@ -19,7 +20,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -31,24 +32,44 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>com.myorg.NotificationtemplateserviceApp</mainClass>
+                    <mainClass>com.myorg.NotificationTemplateServiceApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <dependencies>
-        <!-- AWS Cloud Development Kit -->
+        <!-- https://github.com/stratospheric-dev/cdk-constructs -->
         <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>aws-cdk-lib</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
+            <groupId>dev.stratospheric</groupId>
+            <artifactId>cdk-constructs</artifactId>
+            <version>${cdk-constructs.version}</version>
+            <!-- Security vulnerability will be fixed in the upcoming release
+             https://github.com/stratospheric-dev/cdk-constructs/pull/177
+             https://github.com/stratospheric-dev/stratospheric/issues/128
 
+             We can keep the exclusion and specific jackson dependencies till then
+             -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
-            <groupId>software.constructs</groupId>
-            <artifactId>constructs</artifactId>
-            <version>${constructs.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
