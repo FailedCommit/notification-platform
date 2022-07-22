@@ -5,10 +5,7 @@ import com.cb.notificationtemplate.beans.dtos.NotificationTemplateResponse;
 import com.cb.notificationtemplate.services.NotificationTemplateService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -16,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/notification-templates")
 public class NotificationTemplateApi {
     private final NotificationTemplateService notificationTemplateService;
+
+    @GetMapping
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("Hello From Cloudformation :-)");
+    }
 
     @PostMapping(value = "/template")
     public ResponseEntity<NotificationTemplateResponse> createNotificationTemplate(@RequestBody NotificationTemplateRequest request) {
