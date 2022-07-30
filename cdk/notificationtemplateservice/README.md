@@ -19,7 +19,10 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
 
     Refer: https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html
 
-* `cdk deploy -c accountId=123456789012 -c region=us-east-1`
+* `npm run repository:deploy` &
+* `npm run repository:destroy`
+
+Deploys and Destroys Docker Repository App for us. Check `package.json` for more commands. 
 
 ### Output 
 ```
