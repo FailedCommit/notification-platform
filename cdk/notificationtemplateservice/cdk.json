@@ -13,6 +13,7 @@
     ]
   },
   "context": {
+    "applicationName": "notificatio-template-service",
     "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
     "@aws-cdk/core:stackRelativeExports": true,
     "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
@@ -26,7 +27,7 @@
     "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
     "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": true,
     "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
-    "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": true,
+    "@aws-cdk/aws-sns-subscriptions:restrictSqsDecryption": true,
     "@aws-cdk/core:target-partitions": [
       "aws",
       "aws-cn"
