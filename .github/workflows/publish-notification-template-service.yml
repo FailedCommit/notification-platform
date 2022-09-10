@@ -13,7 +13,7 @@ on:
       - 'notificationtemplateservice/**'
       - 'cdk/**/*Service*'
       - 'cdk/pom.xml'
-      - '.github/workflows/04-publish-notification-template-service.yml'
+      - '.github/workflows/publish-notification-template-service.yml'
   workflow_dispatch:
 jobs:
   build-and-publish:
