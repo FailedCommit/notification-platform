@@ -34,7 +34,7 @@ jobs:
           cache: 'gradle'
 
       - name: Build application
-        working-directory: application
+        working-directory: notificationtemplateservice
         run: ./gradlew build --stacktrace
 
       - name: Zip build reports
@@ -56,7 +56,7 @@ jobs:
         if: github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'DEPLOY NOW')
         env:
           DOCKER_IMAGE_TAG: ${{ steps.dockerImageTag.outputs.tag }}
-        working-directory: application
+        working-directory: notificationtemplateservice
         run: |
           docker build -t notification-template-service .
           docker tag notification-template-service ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/notification-template-service:${DOCKER_IMAGE_TAG}
