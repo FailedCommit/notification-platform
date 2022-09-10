@@ -1,0 +1,23 @@
+{
+  "app": "./mvnw -e -q compile exec:java",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "target",
+      "pom.xml",
+      "src/test"
+    ]
+  },
+  "context": {
+    "applicationName": "notification-template-service",
+    "accountId": "987337930789",
+    "region": "us-east-1",
+    "springProfile": "aws",
+    "environmentName": "staging",
+    "dockerImageUrl": "docker.io/mohitchilkoti/notificationtemplateservice-v1:latest"
+  }
+}
