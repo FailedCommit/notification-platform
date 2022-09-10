@@ -17,7 +17,7 @@ on:
       - 'cdk/**/*Monitoring*'
       - 'cdk/**/*DynamoDb*'
       - 'cdk/pom.xml'
-      - '.github/workflows/06-update-notification-template-service-environment-in-staging.yml'
+      - '.github/workflows/env-update-staging-notification-template-service.yml'
   workflow_dispatch:
 
 jobs:
