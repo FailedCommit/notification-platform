@@ -1,5 +1,5 @@
 # This workflow deploys all resources that are specific to the Notification Template Service, but not the app itself.
-name: 06 - Update the Notification Template Service environment in staging
+name: Update the Notification Template Service environment in staging
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

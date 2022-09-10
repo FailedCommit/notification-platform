@@ -1,5 +1,5 @@
 # This workflow deploys the Notification Template Service itself.
-name: 05 - Update the notification-template-service in staging
+name: Update the notification-template-service in staging
 
 env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
