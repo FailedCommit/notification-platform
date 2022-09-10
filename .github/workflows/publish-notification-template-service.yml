@@ -1,5 +1,5 @@
 # This workflow builds the Docker image for the Notification Template Service and then deploys the application.
-name: 04 - Publish notification-template-service
+name: Publish notification-template-service
 
 env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
@@ -10,7 +10,7 @@ env:
 on:
   push:
     paths:
-      - 'application/**'
+      - 'notificationtemplateservice/**'
       - 'cdk/**/*Service*'
       - 'cdk/pom.xml'
       - '.github/workflows/04-publish-notification-template-service.yml'
