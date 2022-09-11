@@ -31,11 +31,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy messaging stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run messaging:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
 
   deploy-database-stack:
@@ -55,11 +55,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy database stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run database:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
 
   deploy-cognito-stack:
@@ -79,11 +79,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy Cognito stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run cognito:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
 
   deploy-activemq-stack:
@@ -103,11 +103,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy ActiveMq stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run activeMq:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
 
   deploy-sequencer-lambda:
@@ -127,7 +127,7 @@ jobs:
           cache: 'maven'
 
       - name: NPM install CDK dependencies
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: NPM install Deployment Sequencer dependencies
@@ -159,11 +159,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy Monitoring stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run monitoring:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
 
   deploy-canary-stack:

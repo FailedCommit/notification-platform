@@ -40,11 +40,11 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy the AWS CDK stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run ${{ matrix.stacks }}:deploy -- -c canaryUserPassword=${{ secrets.CANARY_USER_PASSWORD }}
 
   deploy-sequencer-lambda:
@@ -64,7 +64,7 @@ jobs:
           cache: 'maven'
 
       - name: NPM install CDK dependencies
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: NPM install Deployment Sequencer dependencies

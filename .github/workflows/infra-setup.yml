@@ -32,9 +32,9 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy network stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run network:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}

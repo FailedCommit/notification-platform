@@ -29,13 +29,13 @@ jobs:
           cache: 'maven'
 
       - name: NPM install
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm install
 
       - name: Deploy CDK bootstrap stack
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run bootstrap
 
       - name: Deploy Docker registry
-        working-directory: cdk
+        working-directory: cdk/notificationtemplateservice
         run: npm run repository:deploy
